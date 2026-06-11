@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CloudTask Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>CloudTask Manager</h1>
+    <p>Serverless Task Management Application on AWS</p>
+  </header>
+
+  <main class="container">
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>Total Projects</h3>
+        <p id="totalProjects">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Done Tasks</h3>
+        <p id="doneTasks">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Progress</h3>
+        <p id="progressPercent">0%</p>
+      </div>
+    </section>
+
+    <section class="content-grid">
+
+      <div class="panel">
+        <h2>Add Project</h2>
+
+        <label>Project Name</label>
+        <input type="text" id="projectName" placeholder="Example: Website Project" />
+
+        <label>Description</label>
+        <textarea id="projectDescription" placeholder="Write project description"></textarea>
+
+        <button onclick="createProject()">Add Project</button>
+
+        <h2>Projects</h2>
+        <div id="projectsList"></div>
+      </div>
+
+      <div class="panel">
+        <h2 id="tasksTitle">Tasks</h2>
+
+        <div id="taskForm" class="hidden">
+          <label>Task Title</label>
+          <input type="text" id="taskTitle" placeholder="Example: Create homepage" />
+
+          <label>Description</label>
+          <textarea id="taskDescription" placeholder="Write task description"></textarea>
+
+          <label>Status</label>
+          <select id="taskStatus">
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Done">Done</option>
+          </select>
+
+          <button onclick="createTask()">Add Task</button>
+        </div>
+
+        <p id="selectProjectMessage" class="empty">Select a project to view tasks.</p>
+        <div id="tasksList"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CloudTask Manager | AWS Serverless Project</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
