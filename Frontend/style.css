@@ -5,34 +5,29 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f7fb;
+    background: #eef2f7;
     color: #0f172a;
 }
 
-/* Header */
-header,
-.app-header {
+/* Fix title that appears outside the layout */
+body > h1 {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 20px 15px;
-}
-
-header h1,
-.app-header h1 {
-    margin: 0;
+    padding: 30px 20px 8px;
     font-size: 34px;
     color: #0f172a;
 }
 
-header p,
-.app-header p {
-    margin-top: 10px;
+body > p {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
     color: #475569;
 }
 
-/* Main container */
-.container,
-main {
+/* Main layout */
+main,
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -40,9 +35,9 @@ main {
 
 /* Dashboard cards */
 .dashboard,
+.dashboard-cards,
 .stats,
-.cards,
-.dashboard-cards {
+.cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
@@ -50,8 +45,9 @@ main {
 }
 
 .card,
-.stat-card {
-    background: white;
+.stat-card,
+.dashboard-card {
+    background: #ffffff;
     border-radius: 14px;
     padding: 24px;
     text-align: center;
@@ -59,7 +55,8 @@ main {
 }
 
 .card h3,
-.stat-card h3 {
+.stat-card h3,
+.dashboard-card h3 {
     margin: 0 0 12px;
     color: #1d4ed8;
     font-size: 18px;
@@ -67,15 +64,17 @@ main {
 
 .card p,
 .stat-card p,
+.dashboard-card p,
 .card span,
-.stat-card span {
+.stat-card span,
+.dashboard-card span {
     margin: 0;
     font-size: 30px;
     font-weight: bold;
     color: #0f172a;
 }
 
-/* Layout */
+/* Main sections */
 .content,
 .main-content,
 .sections,
@@ -86,20 +85,14 @@ main {
     align-items: start;
 }
 
-/* Panels */
-section,
-.panel,
-.form-section,
-.projects-section,
-.tasks-section {
-    background: white;
+section {
+    background: #ffffff;
     border-radius: 14px;
     padding: 26px;
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
-section h2,
-.panel h2 {
+section h2 {
     margin-top: 0;
     color: #1d4ed8;
     font-size: 26px;
@@ -135,26 +128,17 @@ button {
     font-weight: bold;
     cursor: pointer;
     margin-top: 14px;
-}
-
-button,
-.btn-primary,
-.add-btn {
     background: #2563eb;
     color: white;
 }
 
-button:hover,
-.btn-primary:hover,
-.add-btn:hover {
+button:hover {
     background: #1d4ed8;
 }
 
-/* Project / task cards */
+/* Projects and tasks cards */
 .project-card,
-.task-card,
-.project,
-.task {
+.task-card {
     background: #f8fafc;
     border-left: 5px solid #2563eb;
     border-radius: 12px;
@@ -163,47 +147,38 @@ button:hover,
 }
 
 .project-card h3,
-.task-card h3,
-.project h3,
-.task h3 {
+.task-card h3 {
     margin: 0 0 8px;
     color: #0f172a;
 }
 
 .project-card p,
-.task-card p,
-.project p,
-.task p {
+.task-card p {
     margin: 6px 0;
     color: #334155;
 }
 
-/* Buttons inside cards */
-.view-btn,
-.btn-view {
+/* Specific buttons */
+.view-btn {
     background: #059669;
     color: white;
     margin-right: 8px;
 }
 
-.view-btn:hover,
-.btn-view:hover {
+.view-btn:hover {
     background: #047857;
 }
 
-.delete-btn,
-.btn-delete {
+.delete-btn {
     background: #dc2626;
     color: white;
 }
 
-.delete-btn:hover,
-.btn-delete:hover {
+.delete-btn:hover {
     background: #b91c1c;
 }
 
-.status-btn,
-.update-btn {
+.status-btn {
     background: #7c3aed;
     color: white;
 }
@@ -220,9 +195,9 @@ footer {
 /* Responsive */
 @media (max-width: 900px) {
     .dashboard,
+    .dashboard-cards,
     .stats,
-    .cards,
-    .dashboard-cards {
+    .cards {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -236,14 +211,13 @@ footer {
 
 @media (max-width: 550px) {
     .dashboard,
+    .dashboard-cards,
     .stats,
-    .cards,
-    .dashboard-cards {
+    .cards {
         grid-template-columns: 1fr;
     }
 
-    header h1,
-    .app-header h1 {
+    body > h1 {
         font-size: 28px;
     }
 }
