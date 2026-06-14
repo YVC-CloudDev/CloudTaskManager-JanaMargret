@@ -186,4 +186,4 @@ During the demo, the following steps can be shown:
 ## Authors
 
 * Jana Jabareen
-* Margret
+* Margret Bathish
